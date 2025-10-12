@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">ExpenseTracker</string>
+
+    <!-- Navigation -->
+    <string name="nav_expenses">Wydatki</string>
+    <string name="nav_statistics">Statystyki</string>
+
+    <!-- Expense List -->
+    <string name="add_expense">Dodaj wydatek</string>
+    <string name="no_expenses">Brak wydatków</string>
+    <string name="total_expenses">Całkowite wydatki</string>
+
+    <!-- Add/Edit Expense -->
+    <string name="add_new_expense">Dodaj nowy wydatek</string>
+    <string name="edit_expense">Edytuj wydatek</string>
+    <string name="amount">Kwota</string>
+    <string name="amount_hint">0.00</string>
+    <string name="category">Kategoria</string>
+    <string name="select_category">Wybierz kategorię</string>
+    <string name="description">Opis</string>
+    <string name="description_hint">Wprowadź opis wydatku</string>
+    <string name="date">Data</string>
+    <string name="save">Zapisz</string>
+    <string name="cancel">Anuluj</string>
+    <string name="delete">Usuń</string>
+    <string name="edit">Edytuj</string>
+
+    <!-- Categories -->
+    <string name="category_food">Jedzenie</string>
+    <string name="category_transport">Transport</string>
+    <string name="category_entertainment">Rozrywka</string>
+    <string name="category_shopping">Zakupy</string>
+    <string name="category_bills">Rachunki</string>
+    <string name="category_health">Zdrowie</string>
+    <string name="category_education">Edukacja</string>
+    <string name="category_other">Inne</string>
+
+    <!-- Statistics -->
+    <string name="statistics_title">Statystyki wydatków</string>
+    <string name="total">Suma</string>
+    <string name="average">Średnia</string>
+    <string name="by_category">Według kategorii</string>
+    <string name="this_month">Ten miesiąc</string>
+    <string name="last_month">Ostatni miesiąc</string>
+    <string name="custom_range">Własny zakres</string>
+
+    <!-- Validation Messages -->
+    <string name="error_empty_amount">Wprowadź kwotę</string>
+    <string name="error_invalid_amount">Nieprawidłowa kwota</string>
+    <string name="error_empty_category">Wybierz kategorię</string>
+    <string name="error_empty_description">Wprowadź opis</string>
+
+    <!-- Confirmation -->
+    <string name="delete_confirmation">Czy na pewno chcesz usunąć ten wydatek?</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+
+    <!-- Currency -->
+    <string name="currency_format">%.2f zł</string>
+</resources>
