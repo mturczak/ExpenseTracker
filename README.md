@@ -46,7 +46,7 @@ A modern Android application for tracking personal expenses with categories, sta
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ExpenseTracker.git
+git clone https://github.com/mturczak/ExpenseTracker.git
 cd ExpenseTracker
 ```
 
@@ -157,7 +157,8 @@ Run tests with:
 
 ## 👤 Author
 
-Miłosz Turczak
+**Miłosz Turczak**
+- GitHub: [@mturczak](https://github.com/mturczak)
 
 ## 📄 License
 
