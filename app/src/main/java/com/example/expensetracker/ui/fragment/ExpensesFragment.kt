@@ -8,15 +8,19 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.expensetracker.R
 import com.example.expensetracker.data.model.ExpenseEntity
 import com.example.expensetracker.databinding.DialogAddExpenseBinding
 import com.example.expensetracker.databinding.FragmentExpensesBinding
 import com.example.expensetracker.ui.adapter.ExpenseAdapter
 import com.example.expensetracker.ui.viewmodel.ExpenseViewModel
+import com.example.expensetracker.ui.helper.SwipeToDeleteCallback
 import com.example.expensetracker.utils.ExpenseCategory
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -55,6 +59,28 @@ class ExpensesFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = expenseAdapter
         }
+
+        // Setup swipe to delete
+        val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.bindingAdapterPosition
+                val expense = expenseAdapter.currentList[position]
+
+                // Delete expense
+                viewModel.delete(expense)
+
+                // Show snackbar with undo option
+                Snackbar.make(binding.root, "Wydatek usunięty", Snackbar.LENGTH_LONG)
+                    .setAction("COFNIJ") {
+                        viewModel.insert(expense)
+                    }
+                    .setActionTextColor(resources.getColor(R.color.accent, null))
+                    .show()
+            }
+        }
+
+        val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
     }
 
     private fun setupObservers() {

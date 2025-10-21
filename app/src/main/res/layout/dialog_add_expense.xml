@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/surface">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,64 +13,92 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilAmount"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/amount"
             app:prefixText="zł "
-            app:startIconDrawable="@android:drawable/ic_dialog_info">
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="@color/accent"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilCategory"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/category">
+            android:hint="@string/category"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="@color/accent"
+            app:hintTextColor="@color/accent">
 
             <AutoCompleteTextView
                 android:id="@+id/actvCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilDescription"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/description">
+            android:hint="@string/description"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="@color/accent"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapSentences|textMultiLine"
-                android:maxLines="3" />
+                android:maxLines="3"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSelectDate"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_marginTop="16dp"
             android:text="@string/date"
             android:textAllCaps="false"
+            android:textSize="15sp"
             app:icon="@android:drawable/ic_menu_my_calendar"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/accent"
+            app:strokeColor="@color/accent"
+            app:strokeWidth="1dp"
+            app:cornerRadius="12dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,21 +109,25 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCancel"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cancel" />
+                android:text="@string/cancel"
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/save" />
+                android:text="@string/save"
+                android:textSize="15sp"
+                app:backgroundTint="@color/accent"
+                app:cornerRadius="12dp" />
 
         </LinearLayout>
 
     </LinearLayout>
 
 </ScrollView>
-

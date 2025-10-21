@@ -1,171 +1,167 @@
-# 💰 Expense Tracker
+# 💰 ExpenseTracker
 
-A modern Android application for tracking personal expenses with categories, statistics, and visualizations.
+Nowoczesna, minimalistyczna aplikacja mobilna do śledzenia wydatków osobistych, stworzona w Android Studio z wykorzystaniem Kotlin i Material Design 3.
 
-## 📱 Features
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
+![Material Design](https://img.shields.io/badge/Material%20Design-757575?style=for-the-badge&logo=material-design&logoColor=white)
 
-- **Add Expenses**: Easily add new expenses with amount, category, description, and date
-- **Edit & Delete**: Modify or remove existing expenses with a simple tap
-- **Categories**: Organize expenses into predefined categories:
-  - 🍔 Food & Dining
-  - 🚗 Transportation
-  - 🏠 Housing
-  - 🎮 Entertainment
-  - 🏥 Healthcare
-  - 🛒 Shopping
-  - 💼 Other
-- **Statistics**: View expense breakdown by category with interactive charts
-- **Total Tracking**: Monitor your total expenses in real-time
-- **Date Selection**: Choose custom dates for each expense entry
+## 📸 Screenshots
 
-## 🛠️ Technologies Used
+<p align="center">
+  <img src="Screenshots/img.png" width="200" alt="Ekran główny"/>
+  <img src="Screenshots/img_1.png" width="200" alt="Lista wydatków"/>
+  <img src="Screenshots/img_2.png" width="200" alt="Dodawanie wydatku"/>
+  <img src="Screenshots/img_3.png" width="200" alt="Statystyki"/>
+</p>
 
-- **Language**: Kotlin
-- **Architecture**: MVVM (Model-View-ViewModel)
-- **UI**: 
-  - Material Design 3
-  - View Binding
-  - Fragment-based navigation
-  - Bottom Navigation
-- **Database**: Room (SQLite)
-- **Async Operations**: Kotlin Coroutines & Flow
-- **Lifecycle**: LiveData & ViewModel
-- **Charts**: MPAndroidChart for statistics visualization
+## 📱 Funkcjonalności
 
-## 📋 Requirements
+- ✅ **Zarządzanie wydatkami** - Dodawanie, edycja i usuwanie wydatków
+- 📊 **Statystyki** - Wizualizacja wydatków według kategorii z interaktywnymi wykresami
+- 🎨 **8 kategorii wydatków** - Jedzenie, Transport, Rozrywka, Zakupy, Rachunki, Zdrowie, Edukacja, Inne
+- 💾 **Lokalna baza danych** - Room Database zapewnia trwałe przechowywanie danych
+- 🌙 **Nowoczesny design** - Minimalistyczny interfejs z Material Design 3
+- 📱 **Responsywny UI** - Płynne animacje i intuicyjna nawigacja
 
-- Android Studio Hedgehog (2023.1.1) or later
-- Android SDK 24 or higher (Target SDK 36)
+## 🛠️ Technologie
+
+### Architektura
+- **MVVM** (Model-View-ViewModel)
+- **Repository Pattern**
+- **Single Activity Architecture**
+
+### Biblioteki i narzędzia
+- **Kotlin** - Język programowania
+- **Android Jetpack:**
+  - Room - Lokalna baza danych
+  - LiveData - Reaktywne zarządzanie danymi
+  - ViewModel - Przechowywanie stanu UI
+  - Navigation Component - Nawigacja między fragmentami
+  - Data Binding - Powiązanie UI z danymi
+- **Material Design 3** - Komponenty UI
+- **MPAndroidChart** - Wykresy i wizualizacje
+- **Coroutines** - Asynchroniczne operacje
+
+## 📂 Struktura projektu
+
+```
+app/
+├── src/main/
+│   ├── java/com/example/expensetracker/
+│   │   ├── data/
+│   │   │   ├── database/      # Room Database
+│   │   │   ├── model/         # Encje danych
+│   │   │   └── repository/    # Warstwa dostępu do danych
+│   │   ├── ui/
+│   │   │   ├── adapter/       # RecyclerView adaptery
+│   │   │   ├── fragment/      # Fragmenty UI
+│   │   │   └── viewmodel/     # ViewModels
+│   │   ├── utils/             # Klasy pomocnicze
+│   │   └── MainActivity.kt    # Główna aktywność
+│   └── res/
+│       ├── layout/            # Pliki XML layoutów
+│       ├── values/            # Kolory, style, stringi
+│       └── drawable/          # Zasoby graficzne
+```
+
+## 🚀 Instalacja i uruchomienie
+
+### Wymagania
+- Android Studio Hedgehog (2023.1.1) lub nowszy
+- Android SDK 24 lub wyższy
 - Kotlin 1.9+
-- Gradle 8.0+
-- JDK 11 or higher
 
-## 🚀 Getting Started
+### Kroki instalacji
 
-### Installation
+1. **Sklonuj repozytorium**
+   ```bash
+   git clone https://github.com/mturczak/ExpenseTracker.git
+   cd ExpenseTracker
+   ```
 
-1. Clone the repository:
-```bash
-git clone https://github.com/mturczak/ExpenseTracker.git
-cd ExpenseTracker
-```
+2. **Otwórz projekt w Android Studio**
+   - File → Open → Wybierz folder projektu
 
-2. Open the project in Android Studio
+3. **Synchronizuj projekt z plikami Gradle**
+   - Android Studio automatycznie pobierze wymagane zależności
 
-3. **Important**: Fix JAVA_HOME if needed:
-   - If you encounter build errors related to JAVA_HOME, ensure it's correctly set
-   - For macOS/Linux: `export JAVA_HOME=/path/to/your/jdk`
-   - For Windows: Set JAVA_HOME in System Environment Variables
+4. **Uruchom aplikację**
+   - Podłącz urządzenie Android lub uruchom emulator
+   - Kliknij "Run" (▶️) w Android Studio
 
-4. Sync the project with Gradle files
+## 💡 Jak używać
 
-5. Run the app on an emulator or physical device
+### Dodawanie wydatku
+1. Kliknij przycisk "Dodaj wydatek" (FAB)
+2. Wprowadź kwotę, wybierz kategorię i dodaj opis
+3. Wybierz datę wydatku
+4. Kliknij "Zapisz"
 
-### Building
+### Przeglądanie statystyk
+1. Przejdź do zakładki "Statystyki"
+2. Zobacz całkowite wydatki i średnią
+3. Przeglądaj wykres kołowy według kategorii
+4. Sprawdź szczegółową listę wydatków w każdej kategorii
 
-```bash
-# Debug build
-./gradlew assembleDebug
+### Edycja/Usuwanie wydatku
+- **Edycja:** Kliknij na wydatek na liście
+- **Usuwanie (sposób 1):** Przesuń wydatek w lewo ← i kliknij "COFNIJ" jeśli zmieniłeś zdanie
+- **Usuwanie (sposób 2):** Przytrzymaj wydatek i potwierdź usunięcie w dialogu
 
-# Release build
-./gradlew assembleRelease
+## 🎨 Design
 
-# Run tests
-./gradlew test
-```
+Aplikacja wykorzystuje nowoczesny, minimalistyczny design z:
+- Zaokrąglonymi rogami (16-20dp)
+- Subtelną paletą kolorów
+- Emoji jako ikony kategorii
+- Czystymi kartami i spacingiem
+- Intuicyjną nawigacją dolną
 
-## 📱 App Structure
+### Paleta kolorów
+- **Primary:** `#1A1A2E` - Ciemny niebieski
+- **Accent:** `#E94560` - Koralowy czerwony
+- **Background:** `#F8F9FA` - Jasny szary
+- **Surface:** `#FFFFFF` - Biały
 
-```
-app/src/main/java/com/example/expensetracker/
-├── data/
-│   ├── dao/                    # Data Access Objects
-│   │   └── ExpenseDao.kt
-│   ├── database/               # Room Database setup
-│   │   └── ExpenseDatabase.kt
-│   ├── model/                  # Data models
-│   │   └── ExpenseEntity.kt
-│   └── repository/             # Repository pattern
-│       └── ExpenseRepository.kt
-├── ui/
-│   ├── adapter/                # RecyclerView Adapters
-│   │   ├── ExpenseAdapter.kt
-│   │   └── CategoryStatAdapter.kt
-│   ├── fragment/               # UI Fragments
-│   │   ├── ExpensesFragment.kt
-│   │   └── StatisticsFragment.kt
-│   └── viewmodel/              # ViewModels
-│       └── ExpenseViewModel.kt
-├── utils/                      # Utility classes
-│   └── ExpenseCategory.kt
-└── MainActivity.kt             # Main Activity
-```
+## 📊 Funkcje do dodania w przyszłości
 
-## 🎨 Screenshots
+- [ ] Eksport danych do CSV/PDF
+- [ ] Filtry i wyszukiwanie wydatków
+- [ ] Budżety miesięczne z alertami
+- [ ] Tryb ciemny (Dark Mode)
+- [ ] Synchronizacja w chmurze
+- [ ] Wielowalutowość
+- [ ] Przypomnienia o regularnych wydatkach
+- [ ] Backup i przywracanie danych
 
-<!-- Add screenshots here -->
-*Screenshots coming soon*
-
-## 📊 Database Schema
-
-### ExpenseEntity
-| Field | Type | Description |
-|-------|------|-------------|
-| id | Long | Primary key (auto-generated) |
-| amount | Double | Expense amount |
-| category | String | Expense category |
-| description | String | Expense description |
-| date | Long | Timestamp of the expense |
-
-## 🔄 Data Flow
-
-1. **User Input** → Fragment receives user interaction
-2. **ViewModel** → Processes business logic
-3. **Repository** → Handles data operations
-4. **DAO** → Executes database queries
-5. **Room Database** → Stores data persistently
-6. **LiveData/Flow** → Notifies UI of changes
-7. **UI Update** → Fragment displays updated data
-
-## 🧪 Testing
-
-The project includes:
-- Unit tests for ViewModels and Repository
-- Instrumented tests for Database operations
-
-Run tests with:
-```bash
-./gradlew test           # Unit tests
-./gradlew connectedCheck # Instrumented tests
-```
-
-## 📝 Known Issues
-
-- Ensure JAVA_HOME is correctly set without extra characters
-- Kapt currently falls back to language version 1.9 (expected behavior)
-
-## 🔮 Future Enhancements
-
-- [ ] Export expenses to CSV/PDF
-- [ ] Budget limits and notifications
-- [ ] Recurring expenses
-- [ ] Multiple currencies support
-- [ ] Data backup and restore
-- [ ] Dark mode improvements
-- [ ] Search and filter functionality
-- [ ] Monthly/yearly reports
-
-## 👤 Author
+## 👤 Autor
 
 **Miłosz Turczak**
+
 - GitHub: [@mturczak](https://github.com/mturczak)
+- Email: [kontakt dostępny przez GitHub]
 
-## 📄 License
+## 📄 Licencja
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Ten projekt jest dostępny na licencji MIT - zobacz plik [LICENSE](LICENSE) dla szczegółów.
 
-## 🙏 Acknowledgments
+## 🤝 Wkład w projekt
 
-- [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) for chart visualization
-- Material Design Guidelines
-- Android Jetpack Libraries
+Zapraszam do zgłaszania Issues i Pull Requestów! Każdy wkład jest mile widziany.
+
+1. Fork projektu
+2. Stwórz branch z nową funkcją (`git checkout -b feature/NowaFunkcja`)
+3. Commit zmian (`git commit -m 'Dodaj nową funkcję'`)
+4. Push do brancha (`git push origin feature/NowaFunkcja`)
+5. Otwórz Pull Request
+
+## 🙏 Podziękowania
+
+- Material Design 3 za komponenty UI
+- MPAndroidChart za bibliotekę wykresów
+- Społeczność Android Developers za wsparcie
+
+---
+
+⭐ Jeśli podoba Ci się ten projekt, zostaw gwiazdkę na GitHub!

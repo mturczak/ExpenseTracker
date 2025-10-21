@@ -8,7 +8,9 @@
     <!-- Expense List -->
     <string name="add_expense">Dodaj wydatek</string>
     <string name="no_expenses">Brak wydatków</string>
+    <string name="add_first_expense">Dodaj swój pierwszy wydatek, aby rozpocząć śledzenie</string>
     <string name="total_expenses">Całkowite wydatki</string>
+    <string name="manage_your_expenses">Zarządzaj swoimi wydatkami</string>
 
     <!-- Add/Edit Expense -->
     <string name="add_new_expense">Dodaj nowy wydatek</string>
@@ -40,6 +42,7 @@
     <string name="total">Suma</string>
     <string name="average">Średnia</string>
     <string name="by_category">Według kategorii</string>
+    <string name="expense_overview">Przegląd Twoich finansów</string>
     <string name="this_month">Ten miesiąc</string>
     <string name="last_month">Ostatni miesiąc</string>
     <string name="custom_range">Własny zakres</string>

@@ -4,160 +4,188 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary"
-            app:title="@string/nav_statistics"
-            app:titleTextColor="@color/white" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <!-- Total Summary Card -->
-            <com.google.android.material.card.MaterialCardView
+            <!-- Header Section -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="@color/surface">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:text="@string/nav_statistics"
+                    android:textColor="@color/text_primary"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.01" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/total"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/expense_overview"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/tvTotalAmount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/primary"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        tools:text="1,234.56 zł" />
+            </LinearLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginVertical="12dp"
-                        android:background="@color/background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/average"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/tvAverageAmount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/text_primary"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        tools:text="123.45 zł" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Category Chart Card -->
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <LinearLayout
+                <!-- Total Summary Card -->
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/surface">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/by_category"
-                        android:textColor="@color/text_primary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/pieChart"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:layout_marginTop="16dp" />
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="24dp">
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="12sp"
+                            android:letterSpacing="0.05"
+                            android:textAllCaps="true" />
 
-            </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/tvTotalAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/accent"
+                            android:textSize="36sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="-0.02"
+                            tools:text="1,234.56 zł" />
 
-            <!-- Category List -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="16dp"
+                            android:background="@color/divider" />
 
-                <LinearLayout
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/average"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="12sp"
+                            android:letterSpacing="0.05"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:id="@+id/tvAverageAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="-0.01"
+                            tools:text="123.45 zł" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Category Chart Card -->
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/surface">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Wydatki według kategorii"
-                        android:textColor="@color/text_primary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerViewCategories"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:nestedScrollingEnabled="false"
-                        tools:itemCount="3"
-                        tools:listitem="@layout/item_category_stat" />
+                        android:orientation="vertical"
+                        android:padding="24dp">
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/by_category"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
-            </com.google.android.material.card.MaterialCardView>
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_marginTop="16dp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Category List -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/surface">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wydatki według kategorii"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewCategories"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:nestedScrollingEnabled="false"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_category_stat" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-

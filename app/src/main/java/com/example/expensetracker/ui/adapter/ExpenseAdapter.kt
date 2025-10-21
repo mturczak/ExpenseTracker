@@ -41,10 +41,11 @@ class ExpenseAdapter(
                 tvAmount.text = String.format("%.2f zł", expense.amount)
                 tvDate.text = formatDate(expense.date)
 
-                // Set category color
-                val categoryColor = getCategoryColor(expense.category)
-                categoryIndicator.setBackgroundColor(
-                    ContextCompat.getColor(binding.root.context, categoryColor)
+                // Set category icon and color
+                val (icon, color) = getCategoryIconAndColor(expense.category)
+                tvCategoryIcon.text = icon
+                categoryCircle.setBackgroundColor(
+                    ContextCompat.getColor(binding.root.context, color)
                 )
 
                 root.setOnClickListener { onItemClick(expense) }
@@ -60,16 +61,16 @@ class ExpenseAdapter(
             return sdf.format(Date(timestamp))
         }
 
-        private fun getCategoryColor(category: String): Int {
+        private fun getCategoryIconAndColor(category: String): Pair<String, Int> {
             return when (category) {
-                ExpenseCategory.FOOD.displayName -> R.color.category_food
-                ExpenseCategory.TRANSPORT.displayName -> R.color.category_transport
-                ExpenseCategory.ENTERTAINMENT.displayName -> R.color.category_entertainment
-                ExpenseCategory.SHOPPING.displayName -> R.color.category_shopping
-                ExpenseCategory.BILLS.displayName -> R.color.category_bills
-                ExpenseCategory.HEALTH.displayName -> R.color.category_health
-                ExpenseCategory.EDUCATION.displayName -> R.color.category_education
-                else -> R.color.category_other
+                ExpenseCategory.FOOD.displayName -> "🍔" to R.color.category_food
+                ExpenseCategory.TRANSPORT.displayName -> "🚗" to R.color.category_transport
+                ExpenseCategory.ENTERTAINMENT.displayName -> "🎬" to R.color.category_entertainment
+                ExpenseCategory.SHOPPING.displayName -> "🛍️" to R.color.category_shopping
+                ExpenseCategory.BILLS.displayName -> "💡" to R.color.category_bills
+                ExpenseCategory.HEALTH.displayName -> "💊" to R.color.category_health
+                ExpenseCategory.EDUCATION.displayName -> "📚" to R.color.category_education
+                else -> "📌" to R.color.category_other
             }
         }
     }
