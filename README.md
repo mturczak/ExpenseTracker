@@ -1,6 +1,6 @@
 # 💰 ExpenseTracker
 
-Nowoczesna, minimalistyczna aplikacja mobilna do śledzenia wydatków osobistych, stworzona w Android Studio z wykorzystaniem Kotlin i Material Design 3.
+A modern, minimalist mobile app for tracking personal expenses, built with Android Studio using Kotlin and Material Design 3.
 
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
@@ -9,41 +9,42 @@ Nowoczesna, minimalistyczna aplikacja mobilna do śledzenia wydatków osobistych
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="Screenshots/img.png" width="200" alt="Ekran główny"/>
-  <img src="Screenshots/img_1.png" width="200" alt="Lista wydatków"/>
-  <img src="Screenshots/img_2.png" width="200" alt="Dodawanie wydatku"/>
-  <img src="Screenshots/img_3.png" width="200" alt="Statystyki"/>
+  <img src="Screenshots/img.png" width="200" alt="Home screen"/>
+  <img src="Screenshots/img_1.png" width="200" alt="Expense list"/>
+  <img src="Screenshots/img_2.png" width="200" alt="Add expense"/>
+  <img src="Screenshots/img_3.png" width="200" alt="Statistics"/>
 </p>
 
-## 📱 Funkcjonalności
+## 📱 Features
 
-- ✅ **Zarządzanie wydatkami** - Dodawanie, edycja i usuwanie wydatków
-- 📊 **Statystyki** - Wizualizacja wydatków według kategorii z interaktywnymi wykresami
-- 🎨 **8 kategorii wydatków** - Jedzenie, Transport, Rozrywka, Zakupy, Rachunki, Zdrowie, Edukacja, Inne
-- 💾 **Lokalna baza danych** - Room Database zapewnia trwałe przechowywanie danych
-- 🌙 **Nowoczesny design** - Minimalistyczny interfejs z Material Design 3
-- 📱 **Responsywny UI** - Płynne animacje i intuicyjna nawigacja
+- ✅ **Expense Management** - Add, edit, and delete expenses
+- 📊 **Statistics** - Visualize expenses by category with interactive charts
+- 🎨 **8 Expense Categories** - Food, Transport, Entertainment, Shopping, Bills, Health, Education, Other
+- 💾 **Local Database** - Room Database ensures persistent data storage
+- 🌙 **Modern Design** - Minimalist interface with Material Design 3
+- 📱 **Responsive UI** - Smooth animations and intuitive navigation
+- 👈 **Swipe to Delete** - Quick gesture-based deletion with undo option
 
-## 🛠️ Technologie
+## 🛠️ Technologies
 
-### Architektura
+### Architecture
 - **MVVM** (Model-View-ViewModel)
 - **Repository Pattern**
 - **Single Activity Architecture**
 
-### Biblioteki i narzędzia
-- **Kotlin** - Język programowania
+### Libraries and Tools
+- **Kotlin** - Programming language
 - **Android Jetpack:**
-  - Room - Lokalna baza danych
-  - LiveData - Reaktywne zarządzanie danymi
-  - ViewModel - Przechowywanie stanu UI
-  - Navigation Component - Nawigacja między fragmentami
-  - Data Binding - Powiązanie UI z danymi
-- **Material Design 3** - Komponenty UI
-- **MPAndroidChart** - Wykresy i wizualizacje
-- **Coroutines** - Asynchroniczne operacje
+  - Room - Local database
+  - LiveData - Reactive data management
+  - ViewModel - UI state management
+  - Navigation Component - Navigation between fragments
+  - Data Binding - UI-data binding
+- **Material Design 3** - UI components
+- **MPAndroidChart** - Charts and visualizations
+- **Coroutines** - Asynchronous operations
 
-## 📂 Struktura projektu
+## 📂 Project Structure
 
 ```
 app/
@@ -51,117 +52,118 @@ app/
 │   ├── java/com/example/expensetracker/
 │   │   ├── data/
 │   │   │   ├── database/      # Room Database
-│   │   │   ├── model/         # Encje danych
-│   │   │   └── repository/    # Warstwa dostępu do danych
+│   │   │   ├── model/         # Data entities
+│   │   │   └── repository/    # Data access layer
 │   │   ├── ui/
-│   │   │   ├── adapter/       # RecyclerView adaptery
-│   │   │   ├── fragment/      # Fragmenty UI
+│   │   │   ├── adapter/       # RecyclerView adapters
+│   │   │   ├── fragment/      # UI fragments
+│   │   │   ├── helper/        # Helper classes
 │   │   │   └── viewmodel/     # ViewModels
-│   │   ├── utils/             # Klasy pomocnicze
-│   │   └── MainActivity.kt    # Główna aktywność
+│   │   ├── utils/             # Utility classes
+│   │   └── MainActivity.kt    # Main activity
 │   └── res/
-│       ├── layout/            # Pliki XML layoutów
-│       ├── values/            # Kolory, style, stringi
-│       └── drawable/          # Zasoby graficzne
+│       ├── layout/            # XML layout files
+│       ├── values/            # Colors, styles, strings
+│       └── drawable/          # Graphics resources
 ```
 
-## 🚀 Instalacja i uruchomienie
+## 🚀 Installation and Setup
 
-### Wymagania
-- Android Studio Hedgehog (2023.1.1) lub nowszy
-- Android SDK 24 lub wyższy
+### Requirements
+- Android Studio Hedgehog (2023.1.1) or newer
+- Android SDK 24 or higher
 - Kotlin 1.9+
 
-### Kroki instalacji
+### Installation Steps
 
-1. **Sklonuj repozytorium**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/mturczak/ExpenseTracker.git
    cd ExpenseTracker
    ```
 
-2. **Otwórz projekt w Android Studio**
-   - File → Open → Wybierz folder projektu
+2. **Open project in Android Studio**
+   - File → Open → Select project folder
 
-3. **Synchronizuj projekt z plikami Gradle**
-   - Android Studio automatycznie pobierze wymagane zależności
+3. **Sync project with Gradle files**
+   - Android Studio will automatically download required dependencies
 
-4. **Uruchom aplikację**
-   - Podłącz urządzenie Android lub uruchom emulator
-   - Kliknij "Run" (▶️) w Android Studio
+4. **Run the app**
+   - Connect an Android device or start an emulator
+   - Click "Run" (▶️) in Android Studio
 
-## 💡 Jak używać
+## 💡 How to Use
 
-### Dodawanie wydatku
-1. Kliknij przycisk "Dodaj wydatek" (FAB)
-2. Wprowadź kwotę, wybierz kategorię i dodaj opis
-3. Wybierz datę wydatku
-4. Kliknij "Zapisz"
+### Adding an Expense
+1. Click the "Add expense" button (FAB)
+2. Enter amount, select category, and add description
+3. Select expense date
+4. Click "Save"
 
-### Przeglądanie statystyk
-1. Przejdź do zakładki "Statystyki"
-2. Zobacz całkowite wydatki i średnią
-3. Przeglądaj wykres kołowy według kategorii
-4. Sprawdź szczegółową listę wydatków w każdej kategorii
+### Viewing Statistics
+1. Go to the "Statistics" tab
+2. View total expenses and average
+3. Browse the pie chart by category
+4. Check detailed list of expenses in each category
 
-### Edycja/Usuwanie wydatku
-- **Edycja:** Kliknij na wydatek na liście
-- **Usuwanie (sposób 1):** Przesuń wydatek w lewo ← i kliknij "COFNIJ" jeśli zmieniłeś zdanie
-- **Usuwanie (sposób 2):** Przytrzymaj wydatek i potwierdź usunięcie w dialogu
+### Editing/Deleting an Expense
+- **Edit:** Click on an expense in the list
+- **Delete (method 1):** Swipe expense to the left ← and click "UNDO" if you change your mind
+- **Delete (method 2):** Long press on expense and confirm deletion in dialog
 
 ## 🎨 Design
 
-Aplikacja wykorzystuje nowoczesny, minimalistyczny design z:
-- Zaokrąglonymi rogami (16-20dp)
-- Subtelną paletą kolorów
-- Emoji jako ikony kategorii
-- Czystymi kartami i spacingiem
-- Intuicyjną nawigacją dolną
+The app uses a modern, minimalist design with:
+- Rounded corners (16-20dp)
+- Subtle color palette
+- Emoji as category icons
+- Clean cards and spacing
+- Intuitive bottom navigation
 
-### Paleta kolorów
-- **Primary:** `#1A1A2E` - Ciemny niebieski
-- **Accent:** `#E94560` - Koralowy czerwony
-- **Background:** `#F8F9FA` - Jasny szary
-- **Surface:** `#FFFFFF` - Biały
+### Color Palette
+- **Primary:** `#1A1A2E` - Dark blue
+- **Accent:** `#E94560` - Coral red
+- **Background:** `#F8F9FA` - Light gray
+- **Surface:** `#FFFFFF` - White
 
-## 📊 Funkcje do dodania w przyszłości
+## 📊 Future Features
 
-- [ ] Eksport danych do CSV/PDF
-- [ ] Filtry i wyszukiwanie wydatków
-- [ ] Budżety miesięczne z alertami
-- [ ] Tryb ciemny (Dark Mode)
-- [ ] Synchronizacja w chmurze
-- [ ] Wielowalutowość
-- [ ] Przypomnienia o regularnych wydatkach
-- [ ] Backup i przywracanie danych
+- [ ] Export data to CSV/PDF
+- [ ] Filters and expense search
+- [ ] Monthly budgets with alerts
+- [ ] Dark Mode
+- [ ] Cloud synchronization
+- [ ] Multi-currency support
+- [ ] Recurring expense reminders
+- [ ] Backup and restore data
 
-## 👤 Autor
+## 👤 Author
 
 **Miłosz Turczak**
 
 - GitHub: [@mturczak](https://github.com/mturczak)
-- Email: [kontakt dostępny przez GitHub]
+- Email: [available through GitHub]
 
-## 📄 Licencja
+## 📄 License
 
-Ten projekt jest dostępny na licencji MIT - zobacz plik [LICENSE](LICENSE) dla szczegółów.
+This project is available under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Wkład w projekt
+## 🤝 Contributing
 
-Zapraszam do zgłaszania Issues i Pull Requestów! Każdy wkład jest mile widziany.
+Issues and Pull Requests are welcome! All contributions are appreciated.
 
-1. Fork projektu
-2. Stwórz branch z nową funkcją (`git checkout -b feature/NowaFunkcja`)
-3. Commit zmian (`git commit -m 'Dodaj nową funkcję'`)
-4. Push do brancha (`git push origin feature/NowaFunkcja`)
-5. Otwórz Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/NewFeature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request
 
-## 🙏 Podziękowania
+## 🙏 Acknowledgments
 
-- Material Design 3 za komponenty UI
-- MPAndroidChart za bibliotekę wykresów
-- Społeczność Android Developers za wsparcie
+- Material Design 3 for UI components
+- MPAndroidChart for chart library
+- Android Developers community for support
 
 ---
 
-⭐ Jeśli podoba Ci się ten projekt, zostaw gwiazdkę na GitHub!
+⭐ If you like this project, leave a star on GitHub!
